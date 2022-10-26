@@ -1,0 +1,283 @@
+:root {
+  /*--- Colors ---*/
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  /*--- Font Size ---*/
+  --fs-norm: 1rem;
+  --fs-inputs: 1.5rem;
+}
+/*--- CSS Reset ---*/
+/*--- https://piccalil.li/blog/a-modern-css-reset/ ---*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*--- End CSS Reset ---*/
+/*---------------------*/
+/*--- General Styles ---*/
+body {
+  font-family: 'Space Mono', monospace;
+  padding: 3rem 0 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light-grayish-cyan);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+}
+.logo {
+  text-align: center;
+  margin-top: 1.7rem;
+  margin-bottom: 2.3rem;
+}
+
+.tip-calculator {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1.4rem 1.4rem 0 0;
+}
+
+.partOne {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--dark-grayish-cyan);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 370px;
+  padding-right: 18px;
+  background-position: 17px 15px;
+  background-repeat: no-repeat;
+  background-color: var(--very-light-grayish-cyan);
+  text-align: right;
+  font-size: 24px;
+  color: var(--very-dark-cyan);
+  font-weight: bolder;
+}
+
+.bill-input {
+  background-image: url(./images/icon-dollar.svg);
+  margin-bottom: 36px;
+}
+
+.tip {
+  margin: 0.7rem auto 2rem auto;
+  display: grid;
+  grid-template-columns: 144px 144px;
+  row-gap: 2rem;
+  column-gap: 1.1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.active-tip {
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  font-weight: bolder;
+}
+
+.people-input {
+  background-image: url(./images/icon-person.svg);
+  margin-bottom: 2.4rem;
+}
+
+.result {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 39px 21px;
+  border-radius: 12px;
+}
+
+.tip-amount,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.7rem;
+}
+
+.person {
+  font-size: 0.75rem;
+  color: var(--dark-grayish-cyan);
+  font-weight: 700;
+}
+
+.amount {
+  font-size: 1.75rem;
+  color: var(--strong-cyan);
+  font-weight: 700;
+}
+
+.reset {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  padding: 9px 0 9px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#tip-custom input {
+  width: 100%;
+}
+
+.peopleLabel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+
+/*-----  Desktop Settings  -----*/
+@media (min-width: 1000px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input {
+    width: 415px;
+    padding: 9px;
+    background-position: 17px 18px;
+  }
+  .tip-calculator {
+    width: 990px;
+    flex-direction: row;
+    border-radius: 1.4rem;
+    padding: 2.3rem;
+    height: 530px;
+  }
+  .partOne {
+    margin-top: 1rem;
+    margin-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .bill-input {
+    margin-bottom: 3.4rem;
+  }
+  .tip {
+    grid-template-columns: 135px 135px 135px;
+    row-gap: 1.2rem;
+    column-gap: 1.063rem;
+    margin-bottom: 3.2rem;
+  }
+  .tips {
+    height: 3.438rem;
+  }
+  .result {
+    margin-left: auto;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 3rem 2.375rem;
+  }
+
+  .amount {
+    font-size: 3.438rem;
+  }
+
+  .reset {
+    padding: 0.813rem 0 0.813rem 0;
+    margin-top: auto;
+  }
+}
