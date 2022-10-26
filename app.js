@@ -7,29 +7,30 @@ const tipCustom = document.querySelector('.tip-custom');
 const resetBtn = document.querySelector('.reset');
 const error = document.querySelector('.error');
 
-billInput.addEventListener('input', billInputFun);
-peopleInput.addEventListener('input', peopleInputFun);
+billInput.addEventListener('input', billInputNum);
+peopleInput.addEventListener('input', peopleInputNum);
 tips.forEach(function (val) {
   val.addEventListener('click', handleClick);
 });
-tipCustom.addEventListener('input', tipInputFun);
+
+tipCustom.addEventListener('input', tipInputNum);
 resetBtn.addEventListener('click', reset);
 
-billInput.value = '0';
+billInput.value = '0.0';
 peopleInput.value = 1;
 tipPerPerson.innerHTML = '$' + (0.0).toFixed(2);
 totalPerPerson.innerHTML = '$' + (0.0).toFixed(2);
 
-let billValue = 0;
+let billValue = 0.0;
 let peopleValue = 1;
 let tipValue = 0.15;
 
-function billInputFun() {
+function billInputNum() {
   billValue = parseFloat(billInput.value);
   calculateTip();
 }
 
-function peopleInputFun() {
+function peopleInputNum() {
   peopleValue = parseFloat(peopleInput.value);
   calculateTip();
   if (peopleValue < 1) {
@@ -42,7 +43,7 @@ function peopleInputFun() {
   }
 }
 
-function tipInputFun() {
+function tipInputNum() {
   tipValue = parseFloat(tipCustom.value / 100);
   tips.forEach(function (val) {
     val.classList.remove('active-tip');
@@ -64,7 +65,7 @@ function handleClick(event) {
 function calculateTip() {
   if (peopleValue >= 1) {
     let tipAmount = (billValue * tipValue) / peopleValue;
-    let total = (billValue * tipAmount) / peopleValue;
+    let total = (billValue + tipAmount) / peopleValue;
     tipPerPerson.innerHTML = '$' + tipAmount.toFixed(2);
     totalPerPerson.innerHTML = '$' + total.toFixed(2);
   }
@@ -72,8 +73,8 @@ function calculateTip() {
 
 function reset() {
   billInput.value = '0.0';
-  billInputFun();
+  billInputNum();
   peopleInput.value = 1;
-  peopleInputFun();
+  peopleInputNum();
   tipCustom.value = '';
 }

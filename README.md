@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/nbailey939/tip-calculator)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://nbailey939.github.io/tip-calculator/)
 
 ## My process
 
@@ -51,6 +51,8 @@ Users should be able to:
 
 - [CSS Reset](https://piccalil.li/blog/a-modern-css-reset/) - Very useful CSS Reset with explination.
 - [PX to REM Calculator](https://nekocalc.com/px-to-rem-converter) - Useful calculator for converting PX to REM.
+- [Number Input](https://www.codexworld.com/how-to/remove-arrows-spinner-from-number-input-css/) - This will help you remove
+  those pesky up and down arrows in the input fields.
 
 ## Author
 
